@@ -1,0 +1,184 @@
+/* Reset and body styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+  background: linear-gradient(45deg, yellow, lime);
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Ensure vertical scroll if needed */
+}
+
+/* Background overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: -1;
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    background-color: #111;
+    overflow-x: hidden;
+    transition: left 0.5s ease; /* Smooth transition */
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+}
+
+/* Overlay effect */
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 1; /* Behind the sidebar */
+    cursor: pointer;
+}
+
+/* Content container styles */
+.content {
+    width: 80%;
+    max-width: 900px; /* Adjusted width for better appearance */
+    margin: 0 auto; /* Centered in the middle of the page */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent content box */
+    border-radius: 12px; /* Adjusted border radius for softer edges */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1.5s ease-in-out;
+    margin-top: 50px; /* Space from the top */
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    margin: 20px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    color: #fff;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto; /* Centered horizontally */
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Adds slight shadow */
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover .logo {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.name {
+    margin-top: 20px;
+    font-size: 36px;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Adds text shadow */
+}
+
+/* Social buttons styles */
+#socials {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-button {
+    width: 80%;
+    margin: 10px;
+    padding: 15px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #444;
+    border: none;
+    border-radius: 25px; /* More rounded corners */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds initial shadow */
+}
+
+.social-button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Add deeper shadow effect */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .name {
+        font-size: 28px;
+    }
+}
+.hamburger.hidden {
+    display: none;
+}
