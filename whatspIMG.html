@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Image with Animation</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f3f3;
+}
+
+.image-container {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px; /* Optional for rounded corners */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img src="IMG-20241015-WA0002.jpg" alt="Centered Image">
+  </div>
+</body>
+</html>
